@@ -1,0 +1,21 @@
+int[] numeros = new int[10];
+int positivos = 0, negativos = 0;
+
+Console.WriteLine("Digite 10 números inteiros:");
+
+for (int i = 0; i < 10; i++)
+{
+    numeros[i] = int.Parse(Console.ReadLine());
+
+    if (numeros[i] > 0)
+    {
+        positivos++;
+    }
+    else if (numeros[i] < 0)
+    {
+        negativos++;
+    }
+}
+
+Console.WriteLine($"Números positivos: {positivos}");
+Console.WriteLine($"Números negativos: {negativos}");

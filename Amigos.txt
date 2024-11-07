@@ -1,0 +1,18 @@
+List<string> amigos = new List<string>();
+string nomeamigos;
+Console.WriteLine("Digite O Nomes Dos Seus Amigos: (Ou 'Sair' Para Terminar)");
+do
+{
+Console.Write("Digite O Nome Do Seu Amigo: ");
+nomeamigos = Console.ReadLine();
+if (nomeamigos.ToLower() != "sair")
+{
+amigos.Add(nomeamigos);
+} while (nomeamigos.ToLower() != "sair");
+
+Console.WriteLine("\nOs Nomes Dos Amigos São: ");
+foreach (string amigo in amigos)
+{
+Console.WriteLine(amigo));
+Console.WriteLine("Você tem + amigos.Count + amigos.");
+Console.ReadKey();

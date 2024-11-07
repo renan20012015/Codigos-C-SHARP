@@ -1,0 +1,14 @@
+string[] semana = new string[7];
+semana[0] = "Domingo"; 
+semana [1] = "Segunda"; 
+semana[2]= "Terça"; 
+semana [3] = "Quarta"; 
+semana [4] = "Quinta"; 
+semana [5] = "Sexta"; 
+semana [6] = "Sabado";
+Console.Write("Selecione Um Numero Entre 0 e 6 Para Mostar Um Dia Da Semana: ");
+
+int numero= int.Parse(Console.ReadLine());
+
+Console.WriteLine($"O Dia Da Semana Na Posição {numero} é: {semana[numero]}");
+Console.ReadKey();

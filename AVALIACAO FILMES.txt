@@ -1,0 +1,56 @@
+    static double Filmes1(double Avaliacao, double Notas)
+    {
+        return  (Notas)/ Avaliacao  ;
+    }
+    static void Main(string[] args)
+    {
+        Console.WriteLine("O programa abaixo irá calcular a media de um filme");
+
+        var filmes = new List<(string Filme, int avaliacao, int notas, double media)>();
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.Write("\nDigite o nome do filme: ");
+            string nomefilme = Console.ReadLine();
+
+            Console.Write("\nDigite o número de avaliacoes do filme: ");
+            int avaliacoes1 = int.Parse(Console.ReadLine());
+
+            Console.Write("\nDigite a soma das avaliacoes do filme: ");
+            int notas = int.Parse(Console.ReadLine());
+
+            double soma = Filmes1(avaliacoes1, notas);
+
+            filmes.Add((nomefilme, avaliacoes1, notas, soma));
+        }
+        
+
+
+
+            foreach (var dados in filmes)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nO {dados.Filme} obteve {dados.avaliacao} em {dados.notas} media");
+
+
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"Media: {dados.media:F1}\n");
+                Console.ResetColor();
+            }
+
+            Console.ReadKey();
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}

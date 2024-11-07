@@ -1,0 +1,8 @@
+Console.WriteLine("Esses São Os Estados Do Nordeste: "); 
+Console.WriteLine();
+List<string> nomes = new List<string> { "Alagoas", "Bahia", "Ceará", "Maranhão", "Paraíba", "Pernambuco" "Piauí", "Rio Grande Do Norte", "Sergipe" };
+foreach (string nome in nomes)
+{
+Console.WriteLine(nome);
+}
+Console.ReadKey();

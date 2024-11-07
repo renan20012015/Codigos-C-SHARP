@@ -1,0 +1,139 @@
+Simples:
+
+        List<string> amigos = new List<string>();
+        string nome;
+
+        Console.WriteLine("Digite os nomes dos seus amigos (digite 'sair' para finalizar):");
+
+        while (true)
+        {
+            nome = Console.ReadLine();
+
+            if (nome.ToLower() == "sair")
+            {
+                break;
+            }
+
+            amigos.Add(nome);
+        }
+
+        Console.WriteLine($"Você tem {amigos.Count} amigos.");
+    
+Professor:
+
+List<string> amigos = new List<string>();
+
+string nomeamigos;
+
+Console.WriteLine("Digite O Nomes Dos Seus Amigos: (Ou 'Sair' Para Terminar)");
+
+
+do
+{
+    Console.Write("Digite O Nome Do Seu Amigo: ");
+    nomeamigos = Console.ReadLine();
+
+    if (nomeamigos.ToLower() != "sair")
+    {
+     amigos.Add(nomeamigos);
+    }
+
+} while (nomeamigos.ToLower() != "sair");
+
+Console.WriteLine("\nOs Nomes Dos Amigos São: ");
+
+foreach (string amigo in amigos)
+{
+    Console.WriteLine(amigo);
+
+}
+
+Console.WriteLine("Você tem " + amigos.Count + " amigos.");
+
+
+
+
+Console.ReadKey();
+
+
+Exemplo Par E Impar:
+
+Console.Write("Quantas palavras você deseja inserir? ");
+int numeroDePalavras = int.Parse(Console.ReadLine());
+
+
+string[] palavras = new string[numeroDePalavras];
+
+
+for (int i = 0; i < numeroDePalavras; i++)
+{
+    Console.Write($"Digite a palavra {i + 1}: ");
+    palavras[i] = Console.ReadLine();
+}
+
+
+int par = 0;
+int impar = 0;
+
+foreach (string palavra in palavras)
+{
+   
+    if (palavra.Length % 2 == 0)
+    {
+        par++;
+    }
+    else
+    {
+        impar++;
+    }
+}
+
+
+Console.WriteLine($"Palavras com quantidade par de letras: {par}");
+Console.WriteLine($"Palavras com quantidade ímpar de letras: {impar}");
+
+
+
+Console.ReadKey();
+
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numeros = new int[10];
+        int positivos = 0, negativos = 0;
+
+        Console.WriteLine("Digite 10 números inteiros:");
+
+        for (int i = 0; i < 10; i++)
+        {
+            numeros[i] = int.Parse(Console.ReadLine());
+
+            if (numeros[i] > 0)
+            {
+                positivos++;
+            }
+            else if (numeros[i] < 0)
+            {
+                negativos++;
+            }
+        }
+
+        Console.WriteLine($"Números positivos: {positivos}");
+        Console.WriteLine($"Números negativos: {negativos}");
+    }
+}
+
+
+
+
+
+
+
+
