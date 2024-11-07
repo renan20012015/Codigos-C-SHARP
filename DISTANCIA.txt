@@ -1,0 +1,52 @@
+
+            while (true)
+            {
+                Console.Write("Digite A Cidade Que Você Visitou : ");
+                
+                Console.ReadLine();
+
+               
+
+
+                Console.Write("Digite Quantos KM Você Percorreu: ");
+                string input1 = Console.ReadLine();
+
+
+                if (!int.TryParse(input1, out int num1))
+                {
+                    Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro.");
+                    continue;
+                }
+
+                int num2;
+                while (true)
+                {
+                    Console.Write("Digite A Velociade Média Que Você Andou: ");
+                    string input2 = Console.ReadLine();
+                   
+                    if (!int.TryParse(input2, out num2))
+                    {
+                        Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro.");
+                        continue;
+                    }
+
+                    break;
+                }
+
+                try
+                {
+                    double resultado = (double) num1 / num2;
+                    Console.WriteLine($"Você Levou {resultado} Horas Para Chegar Em Seu Destino");
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Erro: Divisão por zero não é permitida. Tente novamente.");
+                }
+
+
+                finally
+                {
+                    Console.WriteLine("Operação finalizada.");
+                    Console.ReadKey();
+                }
+                break;
