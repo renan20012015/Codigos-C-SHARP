@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static double Porcentagem(double votesForCandidate, double totalVotes)
+    {
+        return (votesForCandidate / totalVotes) * 100;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("ELEIÇÕES AMERICANAS 2024");
+
+        var votosList = new List<(int votosKamala, int votosTrump, int votosNulos, double mediaKamala, double mediaTrump, double mediaNulos)>();
+
+        for (int i = 0; i < 1; i++)
+        {
+            Console.Write("\nDigite o número de votos para Kamala Harris: ");
+            int votosKamala = int.Parse(Console.ReadLine());
+
+            Console.Write("\nDigite o número de votos para Donald Trump: ");
+            int votosTrump = int.Parse(Console.ReadLine());
+
+            Console.Write("\nDigite o número de votos nulos: ");
+            int votosNulos = int.Parse(Console.ReadLine());
+
+            int totalVotes = votosKamala + votosTrump + votosNulos;
+
+            double mediaKamala = Porcentagem(votosKamala, totalVotes);
+            double mediaTrump = Porcentagem(votosTrump, totalVotes);
+            double mediaNulos = Porcentagem(votosNulos, totalVotes);
+
+            votosList.Add((votosKamala, votosTrump, votosNulos, mediaKamala, mediaTrump, mediaNulos));
+        }
+
+        foreach (var dados in votosList)
+        {
+            Console.WriteLine("RESULTADO DAS ELEIÇÕES 2024:");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"\nPorcentagem De Votos Para Kamala Harris: {dados.mediaKamala:F1}%");
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Porcentagem De Votos Para Donald Trump: {dados.mediaTrump:F1}%");
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Porcentagem De Votos Nulos: {dados.mediaNulos:F1}%");
+            Console.WriteLine();
+
+            Console.ResetColor();
+        }
+
+        Console.ReadKey();
+    }
+}
